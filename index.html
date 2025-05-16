@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Intake System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Medical Intake System</h1>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="formTab">Intake Form</button>
+      <button class="tab-button" data-tab="displayTab">Patient Panel</button>
+      <button class="tab-button" data-tab="aboutTab">About</button>
+    </nav>
+
+    <!-- Form Tab -->
+    <section id="formTab" class="tab active">
+      <form id="medicalForm" novalidate>
+        <div class="grid">
+          <div class="field"><input type="text" name="name" placeholder="Patient Name" required /><span class="error" id="error-name"></span></div>
+          <div class="field"><input type="date" name="dob" required /><span class="error" id="error-dob"></span></div>
+          <div class="field">
+            <select name="gender" required>
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Prefer not to say</option>
+            </select>
+            <span class="error" id="error-gender"></span>
+          </div>
+          <div class="field"><input type="number" name="height" placeholder="Height (cm)" required /><span class="error" id="error-height"></span></div>
+          <div class="field"><input type="number" name="weight" placeholder="Weight (kg)" required /><span class="error" id="error-weight"></span></div>
+          <div class="field"><input type="text" name="bp" placeholder="Blood Pressure (e.g., 120/80)" required /><span class="error" id="error-bp"></span></div>
+          <div class="field"><input type="number" name="hr" placeholder="Heart Rate (bpm)" required /><span class="error" id="error-hr"></span></div>
+          <div class="field"><input type="tel" name="emergencyPhone" placeholder="Emergency Phone" required /><span class="error" id="error-phone"></span></div>
+          <div class="field"><input type="text" name="emergencyName" placeholder="Emergency Contact Name" required /><span class="error" id="error-emergencyName"></span></div>
+          <div class="field"><input type="email" name="email" placeholder="Email (optional)" /></div>
+          <div class="field"><label class="upload-label">Upload Photo: <input type="file" name="photo" accept="image/*" /></label></div>
+        </div>
+
+        <textarea name="history" placeholder="Medical History"></textarea>
+        <textarea name="medications" placeholder="Current Medications"></textarea>
+        <textarea name="allergies" placeholder="Allergies"></textarea>
+
+        <div class="bmi-output"><strong>BMI:</strong> <span id="bmiValue">–</span> <span id="bmiClass"></span></div>
+
+        <button type="submit" class="primary">Save Stats</button>
+      </form>
+    </section>
+
+    <!-- Display Tab -->
+    <section id="displayTab" class="tab">
+  <h2>Patient Panel</h2>
+
+  <div class="field">
+    <label for="patientSelect">Select a patient:</label>
+    <select id="patientSelect"></select>
+  </div>
+
+  <div id="patientPanel">
+    <p>No patient selected.</p>
+  </div>
+
+  <div class="panel-actions">
+    <button id="admitBtn" class="success">Admit</button>
+    <button id="dischargeBtn" class="danger">Discharge</button>
+    <button id="clearAllBtn" class="danger">Clear All Data</button>
+
+  </div>
+</section>
+
+
+    <!-- About Tab -->
+    <section id="aboutTab" class="tab">
+      <h2>About This App</h2>
+      <p>Training Assessment for Week 1: Foundations in MYCURE for Full-Stack Developer</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
