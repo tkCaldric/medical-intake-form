@@ -204,4 +204,3 @@ clearAllBtn.addEventListener('click', () => {
     patientPanel.innerHTML = '<p>No patient selected.</p>';
   }
 });
-//testing
